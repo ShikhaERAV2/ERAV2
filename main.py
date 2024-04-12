@@ -25,7 +25,7 @@ def get_batch_size():
     return BATCH_SIZE
 
 def get_epoch():
-    EPOCHS = 1
+    EPOCHS = 20
     return EPOCHS
 
 def get_criterion():
