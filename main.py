@@ -70,9 +70,9 @@ def train_model(model, device, train_loader, optimizer, epoch,criterion):
         processed += len(data)
         pbar.set_description(desc=f'Train: Loss={loss.item():0.4f} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
 
-    train_acc.append(100*correct/processed)
-    train_losses.append(train_loss/len(train_loader))
-    return (train_losses,train_acc)
+        train_acc.append(100*correct/processed)
+        train_losses.append(train_loss/len(train_loader))
+        return (train_losses,train_acc)
 
 def test_model(model, device, test_loader):
     model.eval()
@@ -88,9 +88,9 @@ def test_model(model, device, test_loader):
             pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
             correct += pred.eq(target.view_as(pred)).sum().item()
 
-    test_loss /= len(test_loader.dataset)
-    test_acc.append(100. * correct / len(test_loader.dataset))
-    test_losses.append(test_loss)
+            test_loss /= len(test_loader.dataset)
+            test_acc.append(100. * correct / len(test_loader.dataset))
+            test_losses.append(test_loss)
 
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
         test_loss, correct, len(test_loader.dataset),
