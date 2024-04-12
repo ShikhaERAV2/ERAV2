@@ -6,7 +6,7 @@ from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 from models.resnet import *
 from models.ModelTrainer import *
-from utils_1 import convert_to_imshow_format
+from utils import convert_to_imshow_format
 #from model import ResNet_Custom
 
 
