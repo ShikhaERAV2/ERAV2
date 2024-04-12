@@ -71,9 +71,8 @@ def train_model(model, device, train_loader, optimizer, epoch,criterion):
         train_acc.append(100*correct/processed)
         train_losses.append(train_loss/len(train_loader))
         pbar.set_description(desc=f'Train: Loss={loss.item():0.4f} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-
         
-        return (train_losses,train_acc)
+    return (train_losses,train_acc)
 
 def test_model(model, device, test_loader):
     model.eval()
